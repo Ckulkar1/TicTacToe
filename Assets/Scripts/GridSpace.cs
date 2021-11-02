@@ -10,6 +10,11 @@ public class GridSpace : MonoBehaviour
 
     private GameController gameController;
 
+    string GetPlayerSide()
+    {
+        return "X";
+    }
+
     public void SetGameControllerReference(GameController controller)
     {
         gameController = controller;
@@ -17,7 +22,7 @@ public class GridSpace : MonoBehaviour
 
     public void SetSpace()
     {
-        buttonText.text = gameController.GetPlayerSide();
+        buttonText.text = GetPlayerSide();
         button.interactable = false;
         gameController.EndTurn();
     }
